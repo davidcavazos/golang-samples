@@ -2,7 +2,7 @@
 
 set -ex
 
-if [ $TRAVIS != "true" ]; then
+if [ -z $KOKORO_BUILD_ARTIFACTS_SUBDIR ]; then
   echo "This should only be run from travis."
   exit 1
 fi
